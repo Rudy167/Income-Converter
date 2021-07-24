@@ -1,0 +1,40 @@
+<mat-drawer-container
+[class.drawer-opened]="drawer.opened"
+class="example-container">
+<mat-drawer #drawer 
+  class="drawer" 
+  mode="side" 
+  opened="false">
+
+  <mat-toolbar class="header">
+<nav>Filter</nav>
+    <mat-icon class="close"
+   (click)="drawer.close()">close</mat-icon>
+  </mat-toolbar>
+  <div class="contents">
+    Drawer
+  </div>
+</mat-drawer>
+<p>
+  <mat-toolbar color="primary" class="menu-bar mat-elevation-z1 blue" role="heading">
+    <span>Income Converter</span>
+    <span class="example-spacer"></span>
+    <button mat-icon-button class="example-icon history-icon" aria-label="history icon">
+      <mat-icon>history</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+      <mat-icon>share</mat-icon>
+    </button>
+  </mat-toolbar>
+</p>
+<nav class="center" >
+<h2 class=" mat-h2" role="heading">What can I do for you?</h2>
+<p role="definition" class="text-read"><mark>I can help you to convert or calculate your income/salary between different countries using the method  <a mat-list-item href="https://en.wikipedia.org/wiki/Purchasing_power_parity" hreflang="en" target="_blank" ><mark>PPP</mark></a></mark></p>
+</nav>
+
+</mat-drawer-container>
+<particles [params]="myParams" [style]="myStyle" [width]="width" [height]="height"></particles>
+<router-outlet>
+
+</router-outlet>
+

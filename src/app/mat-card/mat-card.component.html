@@ -1,0 +1,74 @@
+<div class="mat-card-center">
+  <mat-card class="mat-elevation-z4">
+
+    <mat-grid-list [cols]="42" rowHeight="4:2" gutterSize="5px" (window:resize)="onResize($event)">
+      <!-- <mat-grid-tile colspan="42" rowspan="3" [style.background]=" 'white'">
+        <mat-checkbox class="margin" color="primary" [checked]="true">Multiple destination countries</mat-checkbox>
+      </mat-grid-tile> -->
+      <mat-grid-tile class="mat-grid-tile-border" [colspan]="breakpoint" [rowspan]="breakpoint_rowspan" [style.background]=" 'white'">
+        <mat-form-field appearance="none">
+          <mat-select [formControl]="sourceCountry" placeholder="source country">
+            <mat-select-trigger>
+              {{sourceCountry.value.Country ? sourceCountry.value.Country : ''}}
+            </mat-select-trigger>
+            <mat-option *ngFor="let eachCountryData of countryData" [value]="eachCountryData">
+              {{eachCountryData.Country}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="arrow_breakpoint" rowspan="6">
+        <section></section>
+      </mat-grid-tile>
+      <mat-grid-tile class="mat-grid-tile-border" [colspan]="breakpoint" [rowspan]="breakpoint_rowspan" [style.background]=" 'white'">
+        <mat-form-field appearance="none">
+
+          <mat-select [formControl]="destinationCountry" placeholder="destination country">
+            <mat-select-trigger>
+              {{destinationCountry.value.Country ?destinationCountry.value.Country : ''}}
+            </mat-select-trigger>
+            <mat-option *ngFor="let eachCountryData of countryData" [value]="eachCountryData">
+              {{eachCountryData.Country}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile colspan="42" rowspan="2"></mat-grid-tile>
+
+      <mat-grid-tile class="mat-grid-tile-border" [colspan]="amount_colspan" [rowspan]="breakpoint_rowspan" [style.background]=" 'white'">
+        <mat-form-field class="example-full-width" appearance="none">
+
+          <input type="number" (blur)="onSubmit()" onkeyup="if(this.value<0){this.value= this.value * -1}"
+            [formControl]="sourceCountryAmount" matInput placeholder="amount in source country">
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile [colspan]="amount_colspan_currency" [rowspan]="breakpoint_rowspan">
+        <h1 class="adjust-div-size">{{sourceCountry.value.currencyCode}}</h1>
+      </mat-grid-tile>
+
+      <mat-grid-tile colspan="42" rowspan="4">
+        <mat-divider></mat-divider>
+      </mat-grid-tile>
+
+      <mat-grid-tile colspan="42" rowspan="8">
+        <mat-card-actions>
+
+          <button mat-raised-button color="primary" (click)="onSubmit()" [disabled]="isDisabled">Submit</button>
+
+        </mat-card-actions>
+      </mat-grid-tile>
+      <mat-grid-tile colspan="42" rowspan="1"></mat-grid-tile>
+      <ng-container *ngIf="!isDisabled">
+        <mat-grid-tile colspan="42" rowspan="12" class="w3-panel w3-white w-100">
+
+
+          <h4>Success! You need <mark>{{resultValue | number}} {{destinationCountry.value.currencyCode}} in
+              {{destinationCountry.value.Country}}</mark> to buy the same goods/services with <mark>
+              {{sourceCountryAmount.value | number }} {{sourceCountry.value.currencyCode}} in
+              {{sourceCountry.value.Country}}</mark></h4>
+          <h4></h4>
+
+        </mat-grid-tile>
+      </ng-container>
+    </mat-grid-list>
+  </mat-card>
+</div>

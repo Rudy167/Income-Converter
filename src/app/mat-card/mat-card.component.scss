@@ -1,0 +1,83 @@
+.mat-card-center{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  
+    height:70vh;
+    align-items: center;
+  
+}
+mat-select{
+  width:100%;
+}
+mat-form-field{
+    background-color: #fff;
+    width:50vw;
+}
+mat-card{
+    border-radius:1rem;
+}
+::ng-deep mat-card mat-grid-list div mat-grid-tile.mat-grid-tile-border.mat-grid-tile{
+  border: 1px solid black;
+ 
+}
+::ng-deep mat-grid-list mat-grid-tile figure mat-form-field div div div.mat-form-field-infix{
+  // text-align:center;
+}
+.material-icons{
+  font-size: 50px;
+  width: 50px;
+  height:50px;
+  z-index:1000;
+  vertical-align:middle;
+}
+section:after {
+  content: ' \21CC';
+  font-size: x-large;
+}
+.margin {
+  margin: 0 12px;
+  
+  
+}
+mat-form-field div div div #mat-select-1 div div span mat-select-trigger.ng-star-inserted{
+  font-weight: 500px ;
+  font-size: large;
+}
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+::ng-deep mat-card mat-grid-list div mat-grid-tile figure.mat-figure mat-form-field div div div #mat-input-0{
+  font-size: x-large;
+  text-align: center
+}
+::ng-deep button.mat-focus-indicator.mat-raised-button.mat-button-base.mat-primary{
+  width:100vw;
+}
+::ng-deep  div div.mat-select-value{
+  font-size: x-large;
+  text-align: center
+}
+.w-100{
+  width:100%;
+  border:1px solid green;
+  overflow:hidden;
+ 
+}
+::ng-deep mat-grid-tile figure div h3,h4{
+  color:green;
+}
+.adjust-div-size{
+width:auto;
+
+  
+}
+button.mat-focus-indicator mat-raised-button mat-button-base mat-primary{
+  margin-top:16px;
+}
